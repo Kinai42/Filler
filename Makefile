@@ -1,5 +1,5 @@
 OBJ = $(addsuffix .o, $(addprefix obj/, Filler big_map map piece run small_map))
-OBJ_W ?= $(shell find $(P_OBJ) | grep \\.o$)
+OBJ_W ?= $(shell find obj | grep \\.o$)
 
 NAME = dbauduin.filler
 
