@@ -27,7 +27,7 @@ SRC		= $(SRC_W)
 OBJ		:=	$(notdir $(SRC:.c=.o))
 
 OBJ_P	=	$(addprefix $(P_OBJ)/,$(OBJ))
-
+OBJ_W ?= $(shell find obj | grep \\.o$)
 
 __START: os all
 	 printf "$(OK)[+][$(PROJECT)] Done$(C_DEF)\n"

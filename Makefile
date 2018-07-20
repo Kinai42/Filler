@@ -17,8 +17,10 @@ obj/%.o: src/%.c
 
 clean:
 	@rm -f $(OBJ_W)
+	@make -C ./libft clean
 
 fclean: clean
 	@rm -f $(NAME)
+	@make -C ./libft fclean
 
 re: fclean all
