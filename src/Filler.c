@@ -60,7 +60,6 @@ static void		ft_init(t_map *map, t_piece *piece)
 	piece->end_x = 0;
 	piece->end_y = 0;
 	piece->contact = 0;
-    piece->piece = NULL;
 }
 
 int main()

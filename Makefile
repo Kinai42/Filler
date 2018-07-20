@@ -10,7 +10,7 @@ obj:
 
 $(NAME): $(OBJ)
 	@make -C libft
-	@gcc -o $(NAME) $(OBJ) libft/libft.a
+	@gcc -Wall -Werror -Wextra -o $(NAME) $(OBJ) libft/libft.a
 
 obj/%.o: src/%.c
 	@gcc -o $@ -c $< -I include/ -I libft/include -Weverything
