@@ -13,7 +13,7 @@ $(NAME): $(OBJ)
 	@gcc -Wall -Werror -Wextra -o $(NAME) $(OBJ) libft/libft.a
 
 obj/%.o: src/%.c
-	@gcc -o $@ -c $< -I include/ -I libft/include -Weverything
+	@gcc -o $@ -c $< -I include/ -I libft/include
 
 clean:
 	@rm -f $(OBJ_W)

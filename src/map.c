@@ -1,4 +1,5 @@
 #include "filler.h"
+#define UL unsigned long
 
 void			ft_position(t_map *map)
 {
@@ -31,11 +32,13 @@ void			ft_position(t_map *map)
 
 static void			ft_get_map(t_map *map)
 {
-    unsigned int			i;
+    int			i;
     char		*line;
 
     line = ft_gnl(0);
     free(line);
+    //if (map->map)
+      //  ft_parrfree((void **)map->map);
     if(!(map->map = (char **)malloc(sizeof(char *) * (map->size_y))))
         exit (-1);
     i = 0;

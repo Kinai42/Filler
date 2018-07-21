@@ -1,5 +1,5 @@
 #include "filler.h"
-
+#define UL unsigned long
 static void		ft_piece_size(t_piece *p)
 {
 	int		y;
@@ -35,10 +35,10 @@ static void		ft_get_piece(t_piece *p)
 
 	i = -1;
     //printf("aaaa\n");
-	if (p->piece != NULL)
-		free(p->piece);
+	//if (p->piece != NULL)
+	//	free(p->piece);
     //printf("IF p->piece == NULL\n");
-	if(!(p->piece = (char **)malloc(sizeof(char *) * (p->size_y))))
+	if(!(p->piece = (char **)malloc(sizeof(char *) * (UL)(p->size_y))))
         exit (-1);
     //printf("P->size\n");
     i = -1;

@@ -14,7 +14,7 @@ int		ft_algo_UL(t_map *map, t_piece *p)
 		while (--x > 0)
 			if (!ft_place(y, x, map, p))
 			{
-				ft_print(p, map);
+				ft_print(y, x, map);
 				return (0);
 			}
 	}
@@ -35,7 +35,7 @@ int		ft_algo_UR(t_map *map, t_piece *p)
 		while (++x < map->size_x)
 			if (!ft_place(y, x, map, p))
 			{
-				ft_print(p, map);
+				ft_print(y, x, map);
 				return (0);
 			}
 	}
@@ -55,7 +55,7 @@ int		ft_algo_DL(t_map *map, t_piece *p)
 		while (--x > 0)
 			if (!ft_place(y, x, map, p))
 			{
-				ft_print(p, map);
+				ft_print(y, x, map);
 				return (0);
 			}
 	}
@@ -76,7 +76,7 @@ int		ft_algo_DR(t_map *map, t_piece *p)
 		while (++x < map->size_x)
 			if (!ft_place(y, x, map, p))
 			{
-				ft_print(p, map);
+				ft_print(y, x, map);
 				return (0);
 			}
 	}

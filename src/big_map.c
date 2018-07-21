@@ -34,7 +34,7 @@ int	ft_push_UP(t_map *map, t_piece *p)
 		while (--x > 0)
 			if (!ft_place(y, x, map, p))
 			{
-				ft_print(p, map);
+				ft_print(y, x, map);
 				return (0);
 			}
 	}
@@ -53,7 +53,7 @@ int	ft_push_DOWN(t_map *map, t_piece *p)
 		while (++y < map->size_x - 1)
 			if (!ft_place(y, x, map, p))
 			{
-				ft_print(p, map);
+				ft_print(y, x, map);
 				return (0);
 			}
 	}
@@ -98,20 +98,26 @@ int		ft_algo_big(t_map *map, t_piece *p)
 
 	touch = -1;
 	y = map->size_y - (p->size_y - p->end_y);
+    //printf("Piece = %d-End %d\n", p->size_y, p->end_y);
 	while (--y >= 0)
 	{
 		x = map->size_x - (p->size_x - p->end_x);
 		while (--x >= 0)
+        {   //printf("place = %d\n", ft_place(y, x, map, p));
 			if (!ft_place(y, x, map, p))
-				if (touch > (tmp = ft_count(map, p, y, x)))
+            {
+				if ((tmp = ft_count(map, p, y, x)) > touch)
 				{
+                    //printf("TMP = %d Y = %d x = %d\n", tmp, y, x);
 					touch = tmp;
 	                p->final_y = y;
                 	p->final_x = x;
 				}
-	}
+            }
+    }}
     if (touch == -1)
         return (1);
-	ft_print(p, map);
+    //printf("RETURN %d %d\n", p->final_y, p->final_x);
+	ft_print(p->final_y, p->final_x, map);
 	return (0);
 }

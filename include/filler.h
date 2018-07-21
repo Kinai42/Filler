@@ -71,7 +71,7 @@ int     ft_place(int y, int x, t_map *map, t_piece *p);
 
 void    ft_position(t_map *map);
 int     ft_last(t_map *map, t_piece *p);
-void    ft_print(t_piece *piece, t_map *map);
+void    ft_print(int y, int x, t_map *map);
 
 
 

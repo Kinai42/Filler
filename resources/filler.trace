@@ -1,4 +1,5 @@
-seed = 9076
+seed = 3943
+../dbauduin.filler: Segfault at 111
 ../dbauduin.filler won
 Score:
-112AGAINST48
+111AGAINST7

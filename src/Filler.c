@@ -4,6 +4,7 @@ static void		ft_read(t_map *map, t_piece *p)
 {
 	char		*line;
 
+    p->piece = NULL;
 	while ((line = ft_gnl(0)))
 	{
 		if (!ft_strncmp(line, "Plateau", 6))
@@ -44,6 +45,7 @@ static void		ft_player(t_map *map)
 
 static void		ft_init(t_map *map, t_piece *piece)
 {
+    map->map = NULL;
 	map->player = 0;
 	map->size_x = 0;
 	map->size_y = 0;
@@ -73,6 +75,9 @@ int main()
         return (0);
     ft_init(map, piece);
     ft_player(map);
+    //printf("%s-%s\n", map->adv, map->me);
+    //if (ft_strrchr(map->me, 'o'))
+    //printf("%s,\n", ft_strrchr(map->me, 'o'));
  	while (1)
 	{
 		ft_read(map, piece);
@@ -82,19 +87,21 @@ int main()
 		{
 			if (ft_last(map, piece))
 			{
-				ft_print(piece, map);
+				ft_print(piece->final_y, piece->final_x, map);
 				return (0);
 			}
 		}
+        //ft_parrfree(map->map);
+        //ft_parrfree(piece->piece);
 	}
 }
 
-void	ft_print(t_piece *p, t_map *map)
+void	ft_print(int y, int x, t_map *map)
 {
-	ft_putnbr(p->final_y);
+	ft_putnbr(y);
 	ft_putchar(' ');
-	ft_putnbr(p->final_x);
+	ft_putnbr(x);
 	ft_putchar('\n');
-	map->pos_me_x = p->final_x;
-	map->pos_me_y = p->final_y;
+	map->pos_me_y = y;
+	map->pos_me_x = x;
 }
