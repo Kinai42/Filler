@@ -73,12 +73,13 @@ int		ft_place(int y, int x, t_map *map, t_piece *p)
 
 	py = -1;
 	count = 0;
+    //printf("Y = [%d] X = [%d] P-size Y = [%d] P-size X = [%d] MAP Y = [%d] X [%d]\n", y, x, p->size_y, p->size_x, map->size_y, map->size_x);
 	if (y + p->size_y > map->size_y || x + p->size_x > map->size_x)
 		return (1);
-	while (++py <= (p->size_y - 1))
+	while (++py < p->size_y)
 	{
 	px = -1;
-		while (++px <= (p->size_x - 1))
+		while (++px < p->size_x)
 		{
 			if (p->piece[py][px] == '*' && ft_strrchr(map->adv, map->map[y + py][x + px]))
 				return (1);

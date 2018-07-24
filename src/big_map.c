@@ -50,7 +50,7 @@ int	ft_push_DOWN(t_map *map, t_piece *p)
 	while (++y < map->size_y - 1)
 	{
 		x = -1;
-		while (++y < map->size_x - 1)
+		while (++x < map->size_x - 1)
 			if (!ft_place(y, x, map, p))
 			{
 				ft_print(y, x, map);

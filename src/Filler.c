@@ -23,8 +23,7 @@ static void		ft_player(t_map *map)
 {
     char		*line;
 
-    line = ft_gnl(0);
-    if (map->player == 0)
+    if ((line = ft_gnl(0)))
     {
         if (ft_strstr(line, "p1"))
         {
@@ -38,9 +37,10 @@ static void		ft_player(t_map *map)
 		    map->adv = ft_strdup("Oo");
 		    map->me = ft_strdup("Xx");
         }
+        free(line);
     }
-    //printf("%d me [%s] adv [%s]\n", map->player, map->me, map->adv);
-    free(line);
+    if (map->player == 0 && (write(1, "error\n", 6)))
+        exit (0);
 }
 
 static void		ft_init(t_map *map, t_piece *piece)
@@ -61,7 +61,6 @@ static void		ft_init(t_map *map, t_piece *piece)
 	piece->start_y = 0;
 	piece->end_x = 0;
 	piece->end_y = 0;
-	piece->contact = 0;
 }
 
 int main()
