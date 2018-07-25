@@ -28,10 +28,10 @@ int	ft_push_UP(t_map *map, t_piece *p)
 	int x;
 
 	y = map->size_y;
-	while (--y > 0)
+	while (--y >= 0)
 	{
 		x = map->size_x;
-		while (--x > 0)
+		while (--x >= 0)
 			if (!ft_place(y, x, map, p))
 			{
 				ft_print(y, x, map);
