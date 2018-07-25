@@ -37,8 +37,6 @@ static void			ft_get_map(t_map *map)
 
     line = ft_gnl(0);
     free(line);
-    //if (map->map)
-      //  ft_parrfree((void **)map->map);
     if(!(map->map = (char **)malloc(sizeof(char *) * (map->size_y))))
         exit (-1);
     i = 0;
@@ -72,4 +70,18 @@ void			init_map(char *str, t_map *map)
     }
     ft_get_map(map);
     ft_position(map);
+}
+
+void    free_map_piece(t_map *map, t_piece *piece)
+{
+    int i;
+
+    i = map->size_y;
+    while(--i >= 0)
+        free(map->map[i]);
+    free(map->map);
+    i = piece->size_y;
+    while(--i >= 0)
+        free(piece->piece[i]);
+    free(piece->piece);
 }

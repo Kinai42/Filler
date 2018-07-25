@@ -14,7 +14,7 @@ obj:
 
 $(NAME): $(OBJ)
 	@make -C libft
-	@gcc $(cc) -Wall -Werror -Wextra -o $(NAME) $(OBJ) libft/libft.a
+	@gcc -Wall -Werror -Wextra -o $(NAME) $(OBJ) libft/libft.a
 
 obj/%.o: src/%.c
 	@gcc -o $@ -c $< -I include/ -I libft/include

@@ -4,7 +4,7 @@ static void		ft_read(t_map *map, t_piece *p)
 {
 	char		*line;
 
-    p->piece = NULL;
+    //p->piece = NULL;
 	while ((line = ft_gnl(0)))
 	{
 		if (!ft_strncmp(line, "Plateau", 6))
@@ -45,7 +45,7 @@ static void		ft_player(t_map *map)
 
 static void		ft_init(t_map *map, t_piece *piece)
 {
-    map->map = NULL;
+    //map->map = NULL;
 	map->player = 0;
 	map->size_x = 0;
 	map->size_y = 0;
@@ -90,6 +90,7 @@ int main()
 				return (0);
 			}
 		}
+        free_map_piece(map, piece);
         //ft_parrfree(map->map);
         //ft_parrfree(piece->piece);
 	}
