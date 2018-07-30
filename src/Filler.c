@@ -68,7 +68,6 @@ int main()
     t_map	*map;
 	t_piece	*piece;
     
-
     if (!(map = (t_map *)malloc(sizeof(t_map))) ||
 	(!(piece = (t_piece *)malloc(sizeof(t_piece)))))
         return (0);
@@ -87,6 +86,8 @@ int main()
 			if (ft_last(map, piece))
 			{
 				ft_print(piece->final_y, piece->final_x, map);
+                free(map);
+                free(piece);
 				return (0);
 			}
 		}

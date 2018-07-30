@@ -44,6 +44,11 @@ static void			ft_get_map(t_map *map)
     {
         if ((line = ft_gnl(0)))
         {
+            if (ft_strdchr(&line[4], ".xXoO"))
+            {
+                write(1, "ERROR MAP\n", 10);
+                exit (0);
+            }
             map->map[i] = ft_strdup(&line[4]);
             free(line);
         }

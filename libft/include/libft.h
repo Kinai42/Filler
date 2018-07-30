@@ -91,6 +91,7 @@ char			**ft_tabcpy(char **tab);
 char			*ft_strncpy(char *dest, char *src, size_t n);
 char			*ft_strnstr(char *str, char *to_find, size_t len);
 char			*ft_strrchr(const char *s, int c);
+char            ft_strdchr(char *src, char *to_find);
 char			*ft_strstr(char *str, char *to_find);
 int				ft_strcmp(char *s1, char *s2);
 int				ft_atoi(char *str);
