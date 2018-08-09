@@ -1,5 +1,16 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   map.c                                              :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dbauduin <dbauduin@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2018/08/09 03:23:01 by dbauduin          #+#    #+#             */
+/*   Updated: 2018/08/09 03:23:03 by dbauduin         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "filler.h"
-#define UL unsigned long
 
 void			ft_position(t_map *map)
 {
@@ -40,19 +51,18 @@ static void			ft_get_map(t_map *map)
     if(!(map->map = (char **)malloc(sizeof(char *) * (map->size_y))))
         exit (-1);
     i = 0;
-    while (i <= (map->size_y - 1))
+    while (i < map->size_y)
     {
         if ((line = ft_gnl(0)))
         {
-            if (ft_strdchr(&line[4], ".xXoO"))
+            if (ft_strdchr(&line[4], ".xXoO") || ft_strlen(line) != map->size_x + 4)
             {
                 write(1, "ERROR MAP\n", 10);
                 exit (0);
             }
-            map->map[i] = ft_strdup(&line[4]);
+            map->map[i++] = ft_strdup(&line[4]);
             free(line);
         }
-        i++;
     }
 }
 

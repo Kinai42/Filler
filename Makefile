@@ -1,3 +1,15 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: dbauduin <dbauduin@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2018/08/09 03:22:48 by dbauduin          #+#    #+#              #
+#    Updated: 2018/08/09 03:22:49 by dbauduin         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 OBJ = $(addsuffix .o, $(addprefix obj/, Filler big_map map piece run small_map))
 OBJ_W ?= $(shell find obj | grep \\.o$)
 

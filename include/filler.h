@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   filler.h                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dbauduin <dbauduin@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2018/08/09 03:23:39 by dbauduin          #+#    #+#             */
+/*   Updated: 2018/08/09 03:24:23 by dbauduin         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef FILLER_H
 # define FILLER_H
 
@@ -7,6 +19,8 @@
 # include <fcntl.h>
 # include <stdio.h>
 # include "libft.h"
+
+# define UL unsigned long
 
 typedef struct		s_map
 {
