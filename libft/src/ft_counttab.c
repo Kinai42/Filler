@@ -6,7 +6,7 @@
 /*   By: dbauduin <dbauduin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/09 03:25:07 by dbauduin          #+#    #+#             */
-/*   Updated: 2018/08/09 03:25:10 by dbauduin         ###   ########.fr       */
+/*   Updated: 2018/09/09 03:01:39 by dbauduin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ int	ft_counttab(char **tab)
 	int	count;
 
 	count = -1;
-	while(tab[++count]);
-	return(count);
+	while (tab[++count])
+		;
+	return (count);
 }

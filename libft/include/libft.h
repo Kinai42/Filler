@@ -6,7 +6,7 @@
 /*   By: dbauduin <dbauduin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/21 16:23:20 by dbauduin          #+#    #+#             */
-/*   Updated: 2018/04/14 08:16:09 by Damien           ###   ########.fr       */
+/*   Updated: 2018/09/09 03:04:29 by dbauduin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,14 +84,15 @@ char			*ft_strresize(char *str, size_t size);
 char			*ft_strrem(char *str, int from, int len);
 char			*ft_strjoini(char const *s1, char const *s2, size_t len);
 char			*ft_strchri(const char *s, int c, unsigned int len);
-char			*ft_itoabase_uns(unsigned long long n, int b, long long *f, char c);
+char			*ft_itoabase_uns(unsigned long long n,
+		int b, long long *f, char c);
 char			*ft_strndup(const char *s1, size_t n);
 char			*ft_ftoa(double floa, long long *f);
 char			**ft_tabcpy(char **tab);
 char			*ft_strncpy(char *dest, char *src, size_t n);
 char			*ft_strnstr(char *str, char *to_find, size_t len);
 char			*ft_strrchr(const char *s, int c);
-char            ft_strdchr(char *src, char *to_find);
+char			ft_strdchr(char *src, char *to_find);
 char			*ft_strstr(char *str, char *to_find);
 int				ft_strcmp(char *s1, char *s2);
 int				ft_atoi(char *str);
@@ -101,7 +102,7 @@ int				ft_isascii(int c);
 int				ft_isdigit(int c);
 int				ft_isprint(int c);
 int				ft_memcmp(const void *s1, const void *s2, size_t n);
-int	    		ft_strpush(char **str, char c);
+int				ft_strpush(char **str, char c);
 int				ft_strncmp(const char *s1, const char *s2, size_t n);
 int				ft_tolower(int c);
 int				ft_toupper(int c);

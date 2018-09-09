@@ -6,13 +6,13 @@
 /*   By: dbauduin <dbauduin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/09 03:23:24 by dbauduin          #+#    #+#             */
-/*   Updated: 2018/08/09 03:23:27 by dbauduin         ###   ########.fr       */
+/*   Updated: 2018/09/09 02:49:06 by dbauduin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "filler.h"
 
-int		ft_algo_UL(t_map *map, t_piece *p)
+int		ft_algo_ul(t_map *map, t_piece *p)
 {
 	int	y;
 	int	x;
@@ -33,7 +33,7 @@ int		ft_algo_UL(t_map *map, t_piece *p)
 	return (1);
 }
 
-int		ft_algo_UR(t_map *map, t_piece *p)
+int		ft_algo_ur(t_map *map, t_piece *p)
 {
 	int	y;
 	int	x;
@@ -53,7 +53,8 @@ int		ft_algo_UR(t_map *map, t_piece *p)
 	}
 	return (1);
 }
-int		ft_algo_DL(t_map *map, t_piece *p)
+
+int		ft_algo_dl(t_map *map, t_piece *p)
 {
 	int	y;
 	int	x;
@@ -74,7 +75,7 @@ int		ft_algo_DL(t_map *map, t_piece *p)
 	return (1);
 }
 
-int		ft_algo_DR(t_map *map, t_piece *p)
+int		ft_algo_dr(t_map *map, t_piece *p)
 {
 	int	y;
 	int	x;

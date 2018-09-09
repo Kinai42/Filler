@@ -6,7 +6,7 @@
 /*   By: dbauduin <dbauduin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/09 03:25:25 by dbauduin          #+#    #+#             */
-/*   Updated: 2018/08/09 03:25:30 by dbauduin         ###   ########.fr       */
+/*   Updated: 2018/09/09 03:02:13 by dbauduin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*ft_gnl(int fd)
 	line = ft_strnew(1);
 	while (read(fd, &c, 1) == 1 && c != '\n')
 		if (!ft_strpush(&line, c))
-            return (0);
+			return (0);
 	if (c == '\n')
 		return (line);
 	free(line);

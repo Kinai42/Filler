@@ -6,7 +6,7 @@
 /*   By: dbauduin <dbauduin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/21 16:27:16 by dbauduin          #+#    #+#             */
-/*   Updated: 2017/10/21 16:27:19 by dbauduin         ###   ########.fr       */
+/*   Updated: 2018/09/09 02:56:05 by dbauduin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ char			*ft_itoa(long long n)
 	long long			k;
 
 	k = n;
-    i = ft_intlen(n);
-    i += n < 0 ? 1 : 0;
+	i = ft_intlen(n);
+	i += n < 0 ? 1 : 0;
 	s = ft_strnew(i);
 	if (s == NULL)
 		return (NULL);
@@ -31,7 +31,7 @@ char			*ft_itoa(long long n)
 	}
 	else if (k == 0)
 		s[0] = '0';
-    i--;
+	i--;
 	while (k > 0)
 	{
 		s[i] = (k % 10) + 48;

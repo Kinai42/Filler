@@ -6,7 +6,7 @@
 /*   By: dbauduin <dbauduin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/09 03:23:06 by dbauduin          #+#    #+#             */
-/*   Updated: 2018/08/09 03:23:19 by dbauduin         ###   ########.fr       */
+/*   Updated: 2018/09/09 02:46:01 by dbauduin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,28 +46,21 @@ static void		ft_get_piece(t_piece *p)
 	char	*line;
 
 	i = -1;
-    //printf("aaaa\n");
-	//if (p->piece != NULL)
-	//	free(p->piece);
-    //printf("IF p->piece == NULL\n");
-	if(!(p->piece = (char **)malloc(sizeof(char *) * (UL)(p->size_y))))
-        exit (-1);
-    //printf("P->size\n");
-    i = -1;
+	if (!(p->piece = (char **)malloc(sizeof(char *) * (UL)(p->size_y))))
+		exit(-1);
+	i = -1;
 	while (++i < p->size_y)
 	{
-    //printf("WHILE\n\n");
 		if ((line = ft_gnl(0)))
-        {
-            //printf("While if\n\n");
-		    p->piece[i] = ft_strdup(line);
-	        free(line);
-        }
-    }
+		{
+			p->piece[i] = ft_strdup(line);
+			free(line);
+		}
+	}
 	ft_piece_size(p);
 }
 
-void		init_piece(char *str, t_piece *p)
+void			init_piece(char *str, t_piece *p)
 {
 	int		i;
 	int		num;
@@ -78,13 +71,12 @@ void		init_piece(char *str, t_piece *p)
 	while (str[++i])
 	{
 		num = 0;
-        while ((str[i] >= '0') && (str[i] <= '9'))
-		    num = (num * 10) + (str[i++] - '0');
+		while ((str[i] >= '0') && (str[i] <= '9'))
+			num = (num * 10) + (str[i++] - '0');
 		if (p->size_y == 0)
 			p->size_y = num;
 		else if (p->size_x == 0)
 			p->size_x = num;
 	}
-    //printf("PIECE %d - %d\n", p->size_y, p->size_x);
-    ft_get_piece(p);
+	ft_get_piece(p);
 }

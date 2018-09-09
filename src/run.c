@@ -6,7 +6,7 @@
 /*   By: dbauduin <dbauduin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/09 03:23:20 by dbauduin          #+#    #+#             */
-/*   Updated: 2018/08/09 03:23:23 by dbauduin         ###   ########.fr       */
+/*   Updated: 2018/09/09 02:47:59 by dbauduin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,67 +17,54 @@ static int	ft_big_map(t_map *map, t_piece *p)
 	if (!ft_check(map))
 	{
 		if (map->pos_me_y < map->pos_adv_y)
-        {
-            //printf("UP\n");
-			return (ft_push_UP(map, p));
-        }
+			return (ft_push_up(map, p));
 		else
-        {
-            //printf("DOWN\n");
-			return (ft_push_DOWN(map, p));
-        }
+			return (ft_push_down(map, p));
 	}
 	else
-    {
-        //printf("ALGO\n");
-		if(ft_algo_big(map, p))
+	{
+		if (ft_algo_big(map, p))
 			return (1);
-    }
+	}
 	return (0);
 }
 
 static int	ft_small_map(t_map *map, t_piece *p)
 {
-    int ret;
+	int ret;
 
-    ret = 0;
+	ret = 0;
 	if (map->pos_me_y < (map->size_y / 2))
 	{
-        //printf("1111111111111\n");
 		if (map->pos_me_x < (map->size_x / 2))
-			ret = ft_algo_UL(map, p);
+			ret = ft_algo_ul(map, p);
 		else
-			ret = ft_algo_UR(map, p);
+			ret = ft_algo_ur(map, p);
 	}
 	else
 	{
-        //printf("222222222222\n");
 		if (map->pos_me_x < (map->size_x / 2))
-			ret = ft_algo_DL(map, p);
+			ret = ft_algo_dl(map, p);
 		else
-			ret = ft_algo_DR(map, p);
+			ret = ft_algo_dr(map, p);
 	}
 	return (ret);
 }
 
-int	ft_run(t_map *map, t_piece *p)
+int			ft_run(t_map *map, t_piece *p)
 {
 	if (map->size_y < 20)
-    {
-		//printf("SMALL\n");
-        return (ft_small_map(map, p));
-
-    }
-    else if (map->size_y >= 20)
-    {
-		//printf("BIG\n");
+	{
+		return (ft_small_map(map, p));
+	}
+	else if (map->size_y >= 20)
+	{
 		return (ft_big_map(map, p));
-    }
+	}
 	return (0);
 }
 
-
-int		ft_place(int y, int x, t_map *map, t_piece *p)
+int			ft_place(int y, int x, t_map *map, t_piece *p)
 {
 	int py;
 	int px;
@@ -85,17 +72,18 @@ int		ft_place(int y, int x, t_map *map, t_piece *p)
 
 	py = -1;
 	count = 0;
-    //printf("Y = [%d] X = [%d] P-size Y = [%d] P-size X = [%d] MAP Y = [%d] X [%d]\n", y, x, p->size_y, p->size_x, map->size_y, map->size_x);
 	if (y + p->size_y > map->size_y || x + p->size_x > map->size_x)
 		return (1);
 	while (++py < p->size_y)
 	{
-	px = -1;
+		px = -1;
 		while (++px < p->size_x)
 		{
-			if (p->piece[py][px] == '*' && ft_strrchr(map->adv, map->map[y + py][x + px]))
+			if (p->piece[py][px] == '*' &&
+					ft_strrchr(map->adv, map->map[y + py][x + px]))
 				return (1);
-			if (p->piece[py][px] == '*' && ft_strrchr(map->me, map->map[y + py][x + px]))
+			if (p->piece[py][px] == '*' &&
+					ft_strrchr(map->me, map->map[y + py][x + px]))
 				count++;
 		}
 	}
@@ -104,7 +92,7 @@ int		ft_place(int y, int x, t_map *map, t_piece *p)
 	return (1);
 }
 
-int		ft_last(t_map *map, t_piece *p)
+int			ft_last(t_map *map, t_piece *p)
 {
 	int	y;
 	int	x;
