@@ -6,7 +6,7 @@
 /*   By: dbauduin <dbauduin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/09 03:22:55 by dbauduin          #+#    #+#             */
-/*   Updated: 2018/09/09 16:15:52 by dbauduin         ###   ########.fr       */
+/*   Updated: 2018/09/09 17:49:47 by dbauduin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,5 +110,3 @@ void			ft_print(int y, int x, t_map *map)
 	map->pos_me_y = y;
 	map->pos_me_x = x;
 }
-
-
