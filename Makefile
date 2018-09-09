@@ -33,7 +33,7 @@ $(NAME): $(OBJ)
 	@printf "$(OK)[+][FILLER] Done$(C_DEF)\n"
 
 obj/%.o: src/%.c
-	@gcc -Wall -Wextra -Werror -o $@ -c $< -I include/ -I libft/include
+	@gcc $(cc)  -Wall -Wextra -Werror -o $@ -c $< -I include/ -I libft/include
 
 clean:
 	@rm -f $(OBJ_W)

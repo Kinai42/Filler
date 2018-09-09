@@ -14,6 +14,7 @@
 # define PRINTF_H
 
 # include "libft.h"
+# include <stdint.h>
 
 int			ft_format(char *s, long long *f, va_list ap, int *c);
 char		*ft_cast_int(char s, va_list ap, long long *f);

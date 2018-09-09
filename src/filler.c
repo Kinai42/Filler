@@ -39,14 +39,14 @@ static void		ft_player(t_map *map)
 		if (ft_strstr(line, "p1"))
 		{
 			map->player = 1;
-			map->adv = ft_strdup("Xx");
-			map->me = ft_strdup("Oo");
+			map->adv = "Xx";
+			map->me = "Oo";
 		}
 		else if (ft_strstr(line, "p2"))
 		{
 			map->player = 2;
-			map->adv = ft_strdup("Oo");
-			map->me = ft_strdup("Xx");
+			map->adv = "Oo";
+			map->me = "Xx";
 		}
 		free(line);
 	}
@@ -91,6 +91,7 @@ int				main(void)
 			if (ft_last(map, piece))
 			{
 				ft_print(piece->final_y, piece->final_x, map);
+				free_map_piece(map, piece);
 				free(map);
 				free(piece);
 				return (0);

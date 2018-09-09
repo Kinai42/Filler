@@ -22,11 +22,11 @@ include .misc/make/misc_var
 PROJECT	=	LIBFT
 
 CC		?=	clang
-CC_FLAG ?=	-Werror \
-			-Wall	\
-			-Wextra \
-			#-O1 -g -fsanitize=address	\
-			#-fno-omit-frame-pointer		\
+CC_FLAG ?=
+		  
+		  
+		  
+		  
 
 
 INCLUDE = include
